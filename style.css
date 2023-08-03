@@ -1,14 +1,46 @@
-*{
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
-#container{
-    width: 50%;
+body {
+    background-image: url('./background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    /*  */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+header {
+    display: flex;
+    align-items: center;
     padding: 15px;
-    margin: 100px auto 0;
-    border: 1px solid black;
+    color: white;
+}
+
+header img {
+    width: 100px;
+    filter: invert(100%);
+}
+
+#container {
+    flex: 1;
+    background-color: #6647f2e8;
+    border-radius: 10px;
+    max-width: 800px;
+    padding: 50px;
     /*  */
     display: flex;
     flex-direction: column;
@@ -17,37 +49,64 @@
 
 }
 
-#inputBox{
-    width: 30%;
-    height: 50px;
-    padding: 0px 30px;
+#inputBox {
+    font-size: 1.5rem;
+    width: 60%;
+    border-radius: 100px;
+    padding: 15px 30px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.displayDiv{
-    border: 3px solid rgb(48, 144, 138);
-    border-radius: 25px;
-    color: rgb(48, 144, 138);
+.displayDiv {
+    color: whitesmoke;
+    font-size: 1.5rem;
+    /*  */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+}
+
+.displayDiv>* {
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.info1 {
+    font-size: 3.5rem;
+    flex-basis: 100%;
+}
+
+.info2 {
+    font-size: 2rem;
+    flex-basis: 100%;
+}
+
+.info3,
+.info4,
+.info5 {
+    font-size: 3rem;
+    font-weight: 600;
+    flex-basis: 30%;
+}
+
+.info6,
+.info7,
+.info8,
+.info9 {
+    flex-basis: 45%;
+    line-height: 1.5;
+}
+
+.displayDiv span {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+footer {
+    width: 100%;
+    margin-top: 5%;
     padding: 15px;
-    width: 50%;
-    margin: 30px auto 0;
-    text-align: center;
-}
-
-.buttonInF,
-.buttonInC{
-    border-radius: 15px;
     background-color: black;
     color: white;
-    padding: 20px 30px;
-    
-}
-.buttonInC{
-    background-color: white;
-    color: black;
-}
-.buttonInF:hover,
-.buttonInC:hover{
-    cursor: pointer;
-    transform: translateY(-2px);
-    transition: all 0.2s ease-in-out;
 }
