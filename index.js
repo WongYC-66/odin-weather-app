@@ -1,12 +1,14 @@
-console.log('hi')
-
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#inputBox').addEventListener("keypress", getWeatherInfo)
 
     // initialise
     fetch('https://api.weatherapi.com/v1/current.json?key=e9bd6238e8e14a7bb7884159230308&q=HongKong')
         .then(res => res.json())
-        .then(data => updateUI(data))
+        .then(data => {
+            updateUI(data)
+            document.querySelector('.info3').addEventListener('click', unitConv)
+            document.querySelector('.info6 > span').addEventListener('click', unitConv)
+        })
 })
 
 async function getWeatherInfo(e) {
@@ -72,4 +74,20 @@ function updateUI(data) {
     box8.innerHTML = text8
     box9.innerHTML = text9
 
+    document.querySelector('.info6 > span').addEventListener('click', unitConv)
+}
+
+function unitConv(){
+    let unit = this.textContent.split('o')[1].trim()
+    let value = this.textContent.split('o')[0].trim()
+    let newUnit
+    let newValue
+    if(unit === 'C'){
+        newUnit = 'F'
+        newValue = (value * 9 / 5) + 32
+    } else {
+        newUnit = 'C'
+        newValue = (value - 32) * (5 / 9)
+    }
+    this.innerHTML = `${newValue.toFixed(1)} <sup>o</sup>${newUnit}`
 }

@@ -102,6 +102,10 @@ header img {
     font-size: 1.8rem;
     font-weight: 600;
 }
+.info3,
+.info6 span{
+    cursor: pointer;
+}
 
 footer {
     width: 100%;
