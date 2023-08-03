@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#container{
+    width: 50%;
+    padding: 15px;
+    margin: 100px auto 0;
+    border: 1px solid black;
+    /*  */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+}
+
+#inputBox{
+    width: 30%;
+    height: 50px;
+    padding: 0px 30px;
+}
+
+.displayDiv{
+    border: 3px solid rgb(48, 144, 138);
+    border-radius: 25px;
+    color: rgb(48, 144, 138);
+    padding: 15px;
+    width: 50%;
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+.buttonInF,
+.buttonInC{
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    padding: 20px 30px;
+    
+}
+.buttonInC{
+    background-color: white;
+    color: black;
+}
+.buttonInF:hover,
+.buttonInC:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in-out;
+}
